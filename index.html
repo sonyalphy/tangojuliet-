@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .heading {
+            color: orchid;
+            font-size: 24px;
+        }
+
+        .textarea-container {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">Hey TJ</div>
+    <button id="okButton">OK</button>
+    <div class="textarea-container">
+        <textarea id="loveTextarea" placeholder="Do you love Mizhi? If yes, click Submit"></textarea>
+        <button id="submitButton">Submit</button>
+    </div>
+    <div id="loveMessage"></div>
+
+    <script>
+        const okButton = document.getElementById('okButton');
+        const textareaContainer = document.querySelector('.textarea-container');
+        const submitButton = document.getElementById('submitButton');
+        const loveTextarea = document.getElementById('loveTextarea');
+        const loveMessageDiv = document.getElementById('loveMessage');
+
+        okButton.addEventListener('click', function () {
+            textareaContainer.style.display = 'block';
+        });
+
+        submitButton.addEventListener('click', function () {
+            if (loveTextarea.value.toLowerCase() === 'yes') {
+                loveMessageDiv.innerHTML = `
+                    However far we wander, a piece of us is molten into each other's heart. I know you miss me. I miss you even more. I love you a bit more than before. Distance has never had any effect on our bond; rather, it helped strengthen it. Kuttymma feels so bad for not helping kunjambudu. I know Ambudu's little fingers are ached badly and neck pains much when writing a lot. Sorry. But TJ, I am always beside you by heart. Holding you. Keeping you as my dearest friend. Loving you more as my partner. Intha pirivu sokam kanneeer ellam maridum. Till then let's carry the same vibes. Thank you for being the man beyond my dreams. I feel tears thinking I don't deserve you. I feel overwhelmed for having such a kind soul in my life. I feel humbled by the way you listen to my sobs. Thanks a lot. Love from Mizhi. Umma from Kuttymma. Liplocks from wife. Waiting to meet in real.
+                `;
+            } else {
+                loveMessageDiv.innerHTML = 'I guess we will have to wait for your love!';
+            }
+        });
+    </script>
+</body>
+
+</html>
